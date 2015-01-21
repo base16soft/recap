@@ -21,8 +21,8 @@ module Recap::Tasks::Bundler
     set(:bundle_without) { "development test" }
 
     # The main bundle install command uses all the settings above, together with the `--deployment`,
-    # `--binstubs` and `--quiet` flags
-    set(:bundle_install_command) { "bundle install --gemfile #{bundle_gemfile} --path #{bundle_path} --deployment --quiet --binstubs --without #{bundle_without}" }
+    # and `--quiet` flags
+    set(:bundle_install_command) { "bundle install --gemfile #{bundle_gemfile} --path #{bundle_path} --deployment --quiet --without #{bundle_without}" }
 
     namespace :install do
       # After cloning or updating the code, we only install the bundle if the `Gemfile` or `Gemfile.lock` have changed.
