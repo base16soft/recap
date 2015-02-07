@@ -6,7 +6,7 @@ require 'tempfile'
 module Recap::Support::CapistranoExtensions
   # Run a command as the application user
   def as_app(command, pwd = deploy_to)
-    sudo "su - #{application_user} -c 'cd #{pwd} && #{command}'"
+    run "cd #{pwd} && #{command}"
   end
 
   # Put a string into a file as the application user
